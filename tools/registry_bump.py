@@ -30,13 +30,13 @@ REGISTRY_REPO = "Dispatcharr/Plugins"
 PLUGINS = {
     "vod-manager": {
         "path": Path.home() / "Documents/dev/dispatcharr-vod-manager",
-        "github": "oxios0x00/dispatcharr-vod-manager",
+        "github": "aritmp/dispatcharr-vod-manager",
         "zip": "vod_manager.zip",
         "title": "VOD Manager",
     },
     "vod-probe": {
         "path": Path.home() / "Documents/dev/vod-probe",
-        "github": "oxios0x00/dispatcharr-vod-probe",
+        "github": "aritmp/dispatcharr-vod-probe",
         "zip": "vod_probe.zip",
         "title": "VOD Probe",
     },

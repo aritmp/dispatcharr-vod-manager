@@ -1,13 +1,13 @@
 # VOD Manager
 
-[![Tests](https://github.com/oxios0x00/dispatcharr-vod-manager/actions/workflows/tests.yml/badge.svg)](https://github.com/oxios0x00/dispatcharr-vod-manager/actions/workflows/tests.yml)
-[![Latest release](https://img.shields.io/github/v/release/oxios0x00/dispatcharr-vod-manager)](../../releases/latest)
+[![Tests](https://github.com/aritmp/dispatcharr-vod-manager/actions/workflows/tests.yml/badge.svg)](https://github.com/aritmp/dispatcharr-vod-manager/actions/workflows/tests.yml)
+[![Latest release](https://img.shields.io/github/v/release/aritmp/dispatcharr-vod-manager)](../../releases/latest)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Dispatcharr](https://img.shields.io/badge/dispatcharr-%E2%89%A50.31.0-blue.svg)](https://github.com/Dispatcharr/Dispatcharr/releases/tag/v0.31.0)
 
 A [Dispatcharr](https://github.com/Dispatcharr/Dispatcharr) plugin that curates your VOD catalogue: it decides which version of each movie or episode is worth keeping, prunes the rest, and can write `.strm` files so Emby/Jellyfin show true multi-version playback — something Dispatcharr's own API can't do on its own.
 
-> **Requires [vod-probe](https://github.com/oxios0x00/dispatcharr-vod-probe).** VOD Manager does not measure anything itself: install and enable the companion **vod-probe** plugin first and let it probe your catalogue, otherwise VOD Manager has nothing to decide from. See [Requirements](#requirements).
+> **Requires [vod-probe](https://github.com/aritmp/dispatcharr-vod-probe).** VOD Manager does not measure anything itself: install and enable the companion **vod-probe** plugin first and let it probe your catalogue, otherwise VOD Manager has nothing to decide from. See [Requirements](#requirements).
 
 ## The problem
 
@@ -17,7 +17,7 @@ VOD Manager fixes what your catalogue actually contains, not just what one playe
 
 ## How it works
 
-VOD Manager doesn't probe anything itself. It works alongside a companion plugin, **[vod-probe](https://github.com/oxios0x00/dispatcharr-vod-probe)**, which runs `ffprobe` once per relation and writes the real resolution, audio languages, bitrate and HDR/codec info into it. VOD Manager reads those results, decides which relation(s) of each title match your quality/language settings, and (unless Dry run is on) deletes the rest from Dispatcharr's own database:
+VOD Manager doesn't probe anything itself. It works alongside a companion plugin, **[vod-probe](https://github.com/aritmp/dispatcharr-vod-probe)**, which runs `ffprobe` once per relation and writes the real resolution, audio languages, bitrate and HDR/codec info into it. VOD Manager reads those results, decides which relation(s) of each title match your quality/language settings, and (unless Dry run is on) deletes the rest from Dispatcharr's own database:
 
 ```
 provider groups  →  Dispatcharr (relations)  →  vod-probe (measures each one)  →  VOD Manager (decides, prunes, writes .strm)
@@ -39,7 +39,7 @@ Everything defaults to the safe choice: Dry run is ON, cleanup keeps every match
 ## Requirements
 
 - Dispatcharr, with an M3U/Xtream account that has VOD categories enabled.
-- [vod-probe](https://github.com/oxios0x00/dispatcharr-vod-probe) installed and enabled — VOD Manager decides purely from what vod-probe has already measured, and a title vod-probe hasn't looked at yet simply waits.
+- [vod-probe](https://github.com/aritmp/dispatcharr-vod-probe) installed and enabled — VOD Manager decides purely from what vod-probe has already measured, and a title vod-probe hasn't looked at yet simply waits.
 
 ## Install
 
